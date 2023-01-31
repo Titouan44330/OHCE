@@ -38,9 +38,10 @@ class OhceTest(unittest.TestCase) :
         # QUAND on saisit une chaine
         ohce = Ohce()
         mot = "Et oui jamie"
+        #Sachant qu'il est 13 heure
         retour = ohce.miroir(mot,"Français",13)
 
-        # ALORS "Bonjour" est envoyé avant le mot et "Au revoir" est envoyé après.
+        # ALORS "Bonjour" est envoyé avant le mot et "Bonne journée" est envoyé après.
         self.assertIn("Bonjour", retour)
         self.assertIn("Bonne journée", retour)
 
@@ -48,9 +49,10 @@ class OhceTest(unittest.TestCase) :
         # QUAND on saisit une chaine
         ohce = Ohce()
         mot = "Et oui jamie"
+        # Sachant qu'il est 20 heure
         retour = ohce.miroir(mot,"Français",20)
 
-        # ALORS "Bonjour" est envoyé avant le mot et "Au revoir" est envoyé après.
+        # ALORS "Bonsoir" est envoyé avant le mot et "Bonne soirée" est envoyé après.
         self.assertIn("Bonsoir", retour)
         self.assertIn("Bonne soirée", retour)
 
@@ -58,15 +60,17 @@ class OhceTest(unittest.TestCase) :
         # QUAND on saisit une chaine
         ohce = Ohce()
         mot = "And yes jamie"
+        # Sachant qu'il est 13 heure
         retour = ohce.miroir(mot,"Anglais",13)
 
-        # ALORS "Hello" est envoyé avant le mot et "Good bye" est envoyé après.
+        # ALORS "Good morning" est envoyé avant le mot et "Good bye" est envoyé après.
         self.assertIn("Good morning", retour)
         self.assertIn("Good bye", retour)
     def test_salutation_night_anglais(self):
         # QUAND on saisit une chaine
         ohce = Ohce()
         mot = "And yes jamie"
+        # Sachant qu'il est 20 heure
         retour = ohce.miroir(mot,"Anglais",20)
 
         # ALORS "Hello" est envoyé avant le mot et "Good bye" est envoyé après.
