@@ -2,7 +2,12 @@ from datetime import datetime
 from src.ohce import Ohce
 import locale
 now = datetime.now()
-langue = "Anglais"
+langue = ""
+langue_systeme = locale.getdefaultlocale()[0]
+if langue_systeme == "fr":
+    langue = "Français"
+elif langue_systeme == "en_GB":
+    langue = "Anglais"
 
 if __name__ == '__main__':
     print("Bonjour !")
