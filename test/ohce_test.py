@@ -8,7 +8,7 @@ class OhceTest(unittest.TestCase) :
         res = ohce.miroir("toto","Français")
 
         #Alors cette chaîne est renvoyé en miroir
-        self.assertIn(res,"otot")
+        self.assertIn("otot",res)
 
     def test_palindrome_francais(self):
         # Quand on saisit un palindrome
@@ -52,4 +52,7 @@ class OhceTest(unittest.TestCase) :
 
         # ALORS "Hello" est envoyé avant le mot et "Good bye" est envoyé après.
         self.assertIn("Hello ", retour)
-        self.assertIn(" Good bye", retour)
+        self.assertIn(" Good Bye", retour)
+
+if __name__ == '__main__':
+    unittest.main()
