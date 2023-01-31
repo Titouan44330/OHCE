@@ -1,6 +1,12 @@
 class Ohce:
-    def miroir(self, mot):
+    def miroir(self, mot, langue):
         miroir = mot[::-1]
         if mot == miroir:
-            return miroir + " \n Bien dit"
-        return "Bonjour \n " + miroir + "\n Au revoir"
+            if langue == "Français" :
+                return miroir + " \n Bien dit"
+            else :
+                return miroir + " \n Well done !"
+        if langue == "Français":
+            return "Bonjour \n " + miroir + "\n Au revoir"
+        else :
+            return "Hello \n " + miroir + "\n Good Bye"
