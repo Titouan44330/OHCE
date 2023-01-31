@@ -1,12 +1,17 @@
+import datetime
+from src.langues.francais import Francais
+from src.langues.anglais import Anglais
+
+
 class Ohce:
-    def miroir(self, mot, langue):
-        miroir = mot[::-1]
-        if mot == miroir:
-            if langue == "Français" :
-                return miroir + " \n Bien dit"
-            else :
+    def miroir(self,mot, langue, heure):
+        if langue == "Français" :
+            miroir = mot[::-1]
+            if mot == miroir:
+                return miroir + " \n Bien dit !"
+            return str(Francais.bonjour(heure))+" \n " + miroir + " \n "+str(Francais.au_revoir(heure))
+        if langue == "Anglais":
+            miroir = mot[::-1]
+            if mot == miroir:
                 return miroir + " \n Well done !"
-        if langue == "Français":
-            return "Bonjour \n " + miroir + "\n Au revoir"
-        else :
-            return "Hello \n " + miroir + "\n Good Bye"
+            return str(Anglais.bonjour(heure))+" \n " + miroir + " \n "+str(Anglais.au_revoir(heure))
