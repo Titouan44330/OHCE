@@ -1,18 +1,12 @@
-import locale
-
-from src.Langues.LangueAnglaise import LangueAnglaise
-from src.Langues.LangueFrancaise import LangueFrancaise
-from src.Ohce import Ohce
-from src.PeriodeDeLaJournee import PeriodeDeLaJournee
-
-
-class SystemLangAdapter():
-    def __init__(self):
-        langue_systeme = locale.getdefaultlocale()[0]
-        self.__langue = LangueAnglaise() \
-            if langue_systeme == "en_GB" \
-            else LangueFrancaise()
-
-
+from datetime import datetime
+from src.ohce import Ohce
+now = datetime.now()
 if __name__ == '__main__':
-    ohce = Ohce(SystemLangAdapter(), PeriodeDeLaJournee.NUIT)
+    print("Bonjour !")
+
+    while (1):
+        text = input('Saisissez un texte : ')
+        if (text == 'quitter'):
+            print("Au revoir !")
+            break
+        print(Ohce.miroir(text))
