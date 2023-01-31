@@ -4,4 +4,3 @@ class Ohce:
         if mot == miroir:
             return miroir + " \n Bien dit"
         return "Bonjour \n " + miroir + "\n Au revoir"
-    
